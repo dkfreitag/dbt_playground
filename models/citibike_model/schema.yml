@@ -1,32 +1,31 @@
-
 version: 2
 
 models:
-    - name: first_layer_model
-      description: "Raw Citibike data"
-      constraints:
-        - type: primary_key
-          columns: [bikeid, starttime, stoptime]
-      columns:
-          - name: bikeid
-            tests:
-                - not_null
-          - name: starttime
-            tests:
-                - not_null
-          - name: stoptime
-            tests:
-                - not_null
+  - name: first_layer_model
+    description: "Raw Citibike data"
+    constraints:
+      - type: primary_key
+        columns: [bikeid, starttime, stoptime]
+    columns:
+      - name: bikeid
+        tests:
+          - not_null
+      - name: starttime
+        tests:
+          - not_null
+      - name: stoptime
+        tests:
+          - not_null
 
-    - name: second_layer_model
-      description: "Trip time by bike ID"
-      columns:
-          - name: bikeid
-            description: "Bike ID"
-            tests:
-                - not_null
+  - name: second_layer_model
+    description: "Trip time by bike ID"
+    columns:
+      - name: bikeid
+        description: "Bike ID"
+        tests:
+          - not_null
 
-          - name: trip_time
-            description: "Trip time"
-            tests:
-                - not_null
+      - name: trip_time
+        description: "Trip time"
+        tests:
+          - not_null
