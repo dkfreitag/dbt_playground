@@ -11,9 +11,8 @@
 
 with source_data as (
 
-    select 1 as id
-    union all
-    select null as id
+    SELECT DISTINCT start_station_name, bikeid
+    FROM `bone-and-lumber-12345.dbt_dfreitag.citibike_trips`
 
 )
 
